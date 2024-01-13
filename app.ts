@@ -79,21 +79,39 @@
 
 
 
-interface ICreadential{
- username:string;
- password:string;
- isAdmin?:boolean;
-}
+// interface ICreadential{
+//  username:string;
+//  password:string;
+//  isAdmin?:boolean;
+// }
 
-function login(credential:ICreadential) :boolean{
-  console.log(credential);
-  return true;
-}
-// duck typing having properties like having same properties in 2 or more object 
-// then typescript understood it to be of smae type
-const user={
-    username:'codergyan',
-    password:'123',
-    isAdmin:false,
-}
-login(user);
+// function login(credential:ICreadential) :boolean{
+//   console.log(credential);
+//   return true;
+// }
+// // duck typing having properties like having same properties in 2 or more object 
+// // then typescript understood it to be of smae type
+// const user={
+//     username:'codergyan',
+//     password:'123',
+//     isAdmin:false,
+// }
+// login(user);
+
+
+// interface IAuth {
+//     username:string;
+//     password:string;
+//     login(username:string,password:string):boolean;
+// }
+
+// const auth={
+//     username:'codergyan',
+//     password:'123',
+//    login(username:string,password:string):boolean{
+//   return true;
+//    }
+
+// }
+
+let one="coders";
