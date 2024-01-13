@@ -49,29 +49,51 @@
 //     {name:"age", age:2},
 // ]
 // console.log(getold(player).age);
-// const person =getold(player)as Player
-interface IPost{
-title:string;
-id:number;
-description:string;
+// // const person =getold(player)as Player
+// interface IPost{
+// title:string;
+// id:number;
+// description:string;
+// }
+// interface IUser{
+//     name:string;
+//     age:number;
+// }
+// const fetchpostdata = async(url:string):Promise<IPost[]> =>{
+//     const response=await fetch(`http://example.com/${url}`);
+//     return response.json();
+// }
+// const fetchuserdata=async(url:string):Promise<IUser[]> =>{
+//     const response=await fetch(`http://example.com/${url}`);
+//     return response.json();
+// }
+// const fetchdata= async<ResultType>(path:string):Promise<ResultType[]>=>{
+//     const response=await fetch(`http://example.com/${path}`);
+//     return response.json();
+// }
+// (async()=>{
+// const posts=await fetchdata<IUser>('/users');
+// posts[0].name;
+// })();
+
+
+
+
+interface ICreadential{
+ username:string;
+ password:string;
+ isAdmin?:boolean;
 }
-interface IUser{
-    name:string;
-    age:number;
+
+function login(credential:ICreadential) :boolean{
+  console.log(credential);
+  return true;
 }
-const fetchpostdata = async(url:string):Promise<IPost[]> =>{
-    const response=await fetch(`http://example.com/${url}`);
-    return response.json();
+// duck typing having properties like having same properties in 2 or more object 
+// then typescript understood it to be of smae type
+const user={
+    username:'codergyan',
+    password:'123',
+    isAdmin:false,
 }
-const fetchuserdata=async(url:string):Promise<IUser[]> =>{
-    const response=await fetch(`http://example.com/${url}`);
-    return response.json();
-}
-const fetchdata= async<ResultType>(path:string):Promise<ResultType[]>=>{
-    const response=await fetch(`http://example.com/${path}`);
-    return response.json();
-}
-(async()=>{
-const posts=await fetchdata<IUser>('/users');
-posts[0].name;
-})();
+login(user);
